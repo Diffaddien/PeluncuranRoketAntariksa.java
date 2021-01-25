@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="719.0" style="-fx-background-color: #ffa769;" styleClass="bodybg" stylesheets="@CustomStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="antariksa.fx.PeluncuranRoketController">
+    <children>
+      <Label fx:id="StatusDB" layoutX="591.0" layoutY="6.0" prefHeight="17.0" prefWidth="115.0" textFill="#4bff3b" />
+      <Label fx:id="DBLabel" layoutX="530.0" layoutY="5.0" prefHeight="19.0" prefWidth="57.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <TabPane layoutY="25.0" prefHeight="480.0" prefWidth="720.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Bandar Antariksa">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="451.0" prefWidth="720.0">
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="217.0" style="-fx-background-color: #00ccff; -fx-background-insets: 5px; -fx-background-radius: 5px;">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="17.0" prefWidth="197.0" style="-fx-font-size: 20;" text="Data Bandariksa" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="bandariksaForm" layoutX="34.0" layoutY="68.0" promptText="Nama Bandariksa" />
+                                    <Button fx:id="btnAddBandar" layoutX="51.0" layoutY="162.0" mnemonicParsing="false" onAction="#handleBandar" prefHeight="25.0" prefWidth="115.0" text="Tambahkan Data" />
+                                    <Button fx:id="btnClear" layoutX="51.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="25.0" prefWidth="115.0" text="Bersihkan Form" />
+                                    <ComboBox fx:id="boxBNegara" layoutX="34.0" layoutY="113.0" prefWidth="150.0" promptText="di Negara" />
+                                 </children>
+                              </AnchorPane>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <TableView fx:id="Tab_Bandar" prefHeight="412.0" prefWidth="503.0" style="-fx-background-insets: 5px; -fx-background-radius: 5px;">
+                                       <columns>
+                                          <TableColumn fx:id="BNamaBandar" prefWidth="255.0" text="Nama Bandariksa" />
+                                          <TableColumn fx:id="BNegara" prefWidth="247.0" text="Negara Asal" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="btnRefresh1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleRefresh1" prefHeight="25.0" prefWidth="117.0" style="-fx-background-radius: 10px;" text="Refresh " />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Roket Robot">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="451.0" prefWidth="720.0">
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="217.0" style="-fx-background-color: #00ccff; -fx-background-insets: 5px; -fx-background-radius: 5px;">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="17.0" prefWidth="197.0" style="-fx-font-size: 20;" text="Data Roket" />
+                                    <TextField fx:id="roketForm" layoutX="34.0" layoutY="68.0" promptText="Nama Roket" />
+                                    <TextField fx:id="robotForm" layoutX="34.0" layoutY="111.0" promptText="Nama Robot" />
+                                    <Button fx:id="btnAddRoket" layoutX="51.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleRoket" prefHeight="25.0" prefWidth="115.0" text="Tambahkan Data" />
+                                    <Button fx:id="btnClear2" layoutX="51.0" layoutY="241.0" mnemonicParsing="false" onAction="#handleClear2" prefHeight="25.0" prefWidth="115.0" text="Bersihkan Form" />
+                                 </children>
+                              </AnchorPane>
+                              <VBox alignment="CENTER" prefHeight="373.0" prefWidth="503.0">
+                                 <children>
+                                    <TableView fx:id="Tab_Robot" prefHeight="411.0" prefWidth="503.0" style="-fx-background-insets: 5px; -fx-background-radius: 5px;">
+                                       <columns>
+                                          <TableColumn fx:id="RRNamaRoket" prefWidth="255.0" text="Nama Roket" />
+                                          <TableColumn fx:id="RRobot" prefWidth="247.0" text="Robot Kendali" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="btnRefresh2" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleRefresh2" prefHeight="25.0" prefWidth="117.0" style="-fx-background-radius: 10;" text="Refresh " />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Roket Atronot">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <HBox prefHeight="451.0" prefWidth="720.0">
+                                 <children>
+                                    <AnchorPane prefHeight="200.0" prefWidth="217.0" style="-fx-background-color: #00ccff; -fx-background-insets: 5px; -fx-background-radius: 5px;">
+                                       <children>
+                                          <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="17.0" prefWidth="197.0" style="-fx-font-size: 20;" text="Roket Astronot" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="roketForm2" layoutX="34.0" layoutY="68.0" promptText="Nama Roket" />
+                                          <Button fx:id="btnAddRoket2" layoutX="51.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleRoket2" prefHeight="25.0" prefWidth="115.0" text="Tambahkan Data" />
+                                          <Button fx:id="btnClear3" layoutX="51.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleClear3" prefHeight="25.0" prefWidth="115.0" text="Bersihkan Form" />
+                                          <ComboBox fx:id="boxAwak" layoutX="34.0" layoutY="110.0" prefWidth="150.0" promptText="Jumlah Awak" />
+                                       </children>
+                                    </AnchorPane>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <TableView fx:id="Tab_Astronot" prefHeight="412.0" prefWidth="503.0" style="-fx-background-insets: 5px; -fx-background-radius: 5px;">
+                                             <columns>
+                                                <TableColumn fx:id="RANamaRoket" prefWidth="262.0" text="Nama Roket" />
+                                                <TableColumn fx:id="RAwak" prefWidth="238.0" text="Jumlah Awak" />
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="btnRefresh3" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleRefresh3" prefHeight="25.0" prefWidth="117.0" style="-fx-background-radius: 10px;" text="Refresh " />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Peluncuran Roket">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="451.0" prefWidth="720.0">
+                           <children>
+                              <AnchorPane prefHeight="451.0" prefWidth="189.0" style="-fx-background-color: #00ccff; -fx-background-insets: 5px; -fx-background-radius: 5px;">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="17.0" prefWidth="197.0" style="-fx-font-size: 20;" text="Data Peluncuran" />
+                                    <TextField fx:id="luncurForm" disable="true" editable="false" layoutX="26.0" layoutY="67.0" promptText="ID" />
+                                    <DatePicker fx:id="tanggal" layoutX="26.0" layoutY="149.0" prefHeight="25.0" prefWidth="149.0" promptText="Tanggal Luncur" />
+                                    <Button fx:id="btnAddLuncur" layoutX="43.0" layoutY="226.0" mnemonicParsing="false" onAction="#handleLuncur" prefHeight="25.0" prefWidth="115.0" text="Tambahkan Data" />
+                                    <Button fx:id="btnClear4" layoutX="43.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleClear4" prefHeight="25.0" prefWidth="115.0" text="Bersihkan Form" />
+                                    <ComboBox fx:id="boxAsalPBandariksa" layoutX="26.0" layoutY="188.0" prefWidth="150.0" promptText="di Bandariksa" />
+                                    <ComboBox fx:id="boxAsalRoket" layoutX="25.0" layoutY="107.0" prefWidth="150.0" promptText="Roket" />
+                                 </children>
+                              </AnchorPane>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <TableView fx:id="Tab_Luncur" prefHeight="412.0" prefWidth="518.0" style="-fx-background-insets: 5px; -fx-background-radius: 5px;">
+                                       <columns>
+                                          <TableColumn fx:id="PRIDLuncur" prefWidth="75.0" text="ID Luncur" />
+                                          <TableColumn fx:id="PRoket" prefWidth="124.0" text="Roket" />
+                                          <TableColumn fx:id="PRTanggal" prefWidth="126.0" text="Tanggal Peluncuran" />
+                                          <TableColumn fx:id="PRBandar" prefWidth="185.0" text="Bandariksa" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="btnRefresh4" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleRefresh4" prefHeight="25.0" prefWidth="117.0" style="-fx-background-radius: 10;" text="Refresh " />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <MenuButton fx:id="btnBD" layoutX="442.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleSQLITE" text="Database">
+        <items>
+          <MenuItem fx:id="pilihMYSQL" mnemonicParsing="false" onAction="#handleMYSQL" onMenuValidation="#handleMYSQL" text="MYSQL" />
+          <MenuItem fx:id="pilihSQLITE" mnemonicParsing="false" onAction="#handleSQLITE" onMenuValidation="#handleSQLITE" text="SQLITE" />
+        </items>
+      </MenuButton>
+        
+    </children>
+</AnchorPane>
