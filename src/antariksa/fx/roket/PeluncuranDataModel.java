@@ -17,7 +17,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * @author Diffa
+ * @author ale
  */
 public class PeluncuranDataModel {
     public final Connection conn;
