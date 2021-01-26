@@ -33,6 +33,8 @@
         </target>
 
     Example of calling an Ant task from JavaFX SDK. Note that access to JavaFX SDK Ant tasks must be
+
+
     initialized; to ensure this is done add the dependence on -check-jfx-sdk-version target:
 
         <target name="-post-jfx-jar" depends="-check-jfx-sdk-version">
