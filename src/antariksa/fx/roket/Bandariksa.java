@@ -10,7 +10,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * @author Diffa
+ * @author ale
  */
 public class Bandariksa{
     StringProperty namaBandar;
