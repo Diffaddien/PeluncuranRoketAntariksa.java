@@ -22,7 +22,6 @@
       -post-clean:               called after cleaning build products
 
     (Targets beginning with '-' are not intended to be called on their own.)
-
     Example of inserting a HTML postprocessor after javaFX SDK deployment:
 
         <target name="-post-jfx-deploy">
