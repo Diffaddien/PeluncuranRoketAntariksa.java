@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * @author Diffa
+ * @author ale
  */
 public class DBConnector {
     private static final String USERNAME = "root";
