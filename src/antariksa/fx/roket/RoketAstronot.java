@@ -10,7 +10,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
 /**
- * @author Diffa
+ * @author ale
  */
 public class RoketAstronot extends Roket{
     IntegerProperty awak;
