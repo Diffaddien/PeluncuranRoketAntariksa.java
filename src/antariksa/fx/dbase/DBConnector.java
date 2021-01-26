@@ -46,9 +46,7 @@ public class DBConnector {
                 }
                 break;
             }
-        }
-        
+        }   
         return conn;
-    }
-    
+    }   
 }
